@@ -26,3 +26,14 @@ def test_chart_type_invalid(self):
     self.assertFalse(validate_chart_type("a"))
     self.assertFalse(validate_chart_type("12"))
 
+def test_time_series_valid(self):
+    self.assertTrue(validate_time_series("1"))
+    self.assertTrue(validate_time_series("2"))
+    self.assertTrue(validate_time_series("3"))
+    self.assertTrue(validate_time_series("4"))
+def test_time_series_invalid(self):
+    self.assertFalse(validate_time_series("0"))
+    self.assertFalse(validate_time_series("5"))
+    self.assertFalse(validate_time_series("x"))
+    self.assertFalse(validate_time_series("12"))
+
