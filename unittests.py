@@ -37,3 +37,10 @@ def test_time_series_invalid(self):
     self.assertFalse(validate_time_series("x"))
     self.assertFalse(validate_time_series("12"))
 
+def test_start_date_valid(self):
+    self.assertTrue(validate_date("2024-01-31"))
+def test_start_date_invalid(self):
+    self.assertFalse(validate_date("2024/01/31"))
+    self.assertFalse(validate_date("31-01-2024"))
+    self.assertFalse(validate_date("2024-02-30"))
+    self.assertFalse(validate_date("not-a-date"))
